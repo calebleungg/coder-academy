@@ -68,6 +68,7 @@ def remove
             end
         else
             puts "Cant find contact. Re-enter an appriopriate name in the database."
+            sleep 1
             choose_name
         end
     end
