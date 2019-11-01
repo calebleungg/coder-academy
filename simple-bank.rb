@@ -1,3 +1,4 @@
+# hash to store the users' multiple account balances 
 account_data = {
     "Savings" => 3000,
     "Everyday Access" => 500,
@@ -13,9 +14,9 @@ def deposit(balance, amount)
     user_input = gets.chomp.to_s
 
     case user_input
-    when "d"
-        system("clear")
-        print "Enter Amount to Deposit: $"
+    when "d"                                   # case statement allowing multiple deposits until
+        system("clear")                        # the user chooses to go back to main menu
+        print "Enter Amount to Deposit: $"                      
         deposit(balance, gets.chomp.to_f)
     when "b"
         return balance
@@ -29,16 +30,17 @@ end
 #function for withdrawing from bank account
 def withdraw(balance, amount)
 
-    if (balance - amount) < 0 
-        puts "Account Overdraw Alert: Continue [c], No [n]"
+    if (balance - amount) < 0                                           # if statement for catching Overdraw Withdrawals
+        puts "Account Overdraw Alert: Continue [c], No [n]"            
         answer = gets.chomp.to_s
+
         if answer == "c"
             balance -= amount
             puts "Withdraw Another Amount [w] | Back [b]"
             user_input = gets.chomp.to_s
 
-            case user_input
-            when "w"
+            case user_input                                # case statement allowing multiple withdrawals
+            when "w"                                       # until user decides to go back
                 system("clear")
                 print "Enter Amount to Withdraw: $"
                 withdraw(balance, gets.chomp.to_f)
@@ -52,6 +54,7 @@ def withdraw(balance, amount)
             return balance
         end
     end
+
     balance -= amount
     puts "Withdraw Another Amount [w] | Back [b]"
     user_input = gets.chomp.to_s
@@ -76,7 +79,8 @@ def display_balance(balance)
     puts "Balance: $#{balance}"
     puts "Back [b]"
     back = gets.chomp.to_s
-    if back == "b"
+
+    if back == "b"                      # if statement for allowing users to back into menu on input
         return
     else
         system("clear")
@@ -113,8 +117,8 @@ Select Account:
     "
 print "Select: "
 pick = gets.chomp.to_i
-case pick
-when 1
+case pick                       # case statement for allocating the right account name to be displayed on user input (pick)
+when 1                          # in the above argument for the menu_display method
     ac_name = "Savings"
 when 2
     ac_name = "Everyday Access"
@@ -126,11 +130,11 @@ else
     puts "ERROR"
 end
 
-balance = account_data[ac_name]
-
+balance = account_data[ac_name]     # use input(pick) is used here to iterate through the beginning account_data hash
+                                    # to set the right starting amount to the balance variable
 continue = true
 
-while continue 
+while continue                                          #script loop for running the bank until user quits
     menu_display(ac_name)
     print "Select: "
     option = gets.chomp.to_s
@@ -151,6 +155,8 @@ while continue
         continue = false
     end
 end
+
+
 
 
 
