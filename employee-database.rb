@@ -8,6 +8,18 @@ def choose2(option1, option2)
     return user_input
 end
 
+def monetize(number)                #method for displaying numbers in correct $ format
+    number = number.to_s
+    length = number.length
+    counter = [4,8,12,16]
+    for i in counter
+        if i <= (length+1)
+            number.insert(-i,",")
+        end
+    end
+    return "$#{number}"
+end
+
 #class created for Employees
 class Employee
     attr_accessor :name, :salary            #getter/setter so that CEO can edit details
