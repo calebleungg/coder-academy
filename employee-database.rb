@@ -55,7 +55,7 @@ class Employee
 
         for i in @@employee_database
             puts "Name: #{i.name}"
-            puts "Salary: $#{i.salary}"
+            puts "Salary: #{monetize(i.salary)}"
             puts "----------------"
         end
 
@@ -112,7 +112,7 @@ class Employee
             for employee in @@employee_database
                 if employee.name == search
                     puts "Name: #{employee.name}"
-                    puts "Salary: $#{employee.salary}"
+                    puts "Salary: #{monetize(employee.salary)}"
                 end
             end
             puts "Search Another? Yes [y] Back [b]"
@@ -148,7 +148,7 @@ class Employee
                     i.salary = new_salary
                 end
             end
-            puts "Successfully changed #{name}'s Salary to $#{new_salary}"
+            puts "Successfully changed #{name}'s Salary to #{monetize(new_salary)}"
         end
     end
 
