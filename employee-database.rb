@@ -13,8 +13,9 @@ def monetize(number)                #method for displaying numbers in correct $ 
     length = number.length
     counter = [4,8,12,16]
     for i in counter
-        if i <= (length+1)
+        if i <= length
             number.insert(-i,",")
+            length += 1
         end
     end
     return "$#{number}"
