@@ -1,4 +1,7 @@
+# function for caring for pokeyman
 def care(pokeyman)
+
+    #running care loop
     continue = true 
     while continue
         system("clear")

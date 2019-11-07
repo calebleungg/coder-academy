@@ -1,4 +1,7 @@
+# function for encountering a pokeyman
 def encounter(level, pokeyman, pokeydex, count)
+
+    # displaying menu
     puts "You hear a russle in the bushes ...\n"
     sleep 1
     puts "A wild Pokeyman appears!!

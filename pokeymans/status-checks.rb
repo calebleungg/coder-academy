@@ -1,3 +1,5 @@
+
+# function for checking a pokeyman's hunger and applicable changes
 def hunger_check(pokeyman)
     if pokeyman.hunger > 30
         puts "\n#{pokeyman.name} hasnt eating in ages! He's getting sick (HP - 10)"
@@ -7,6 +9,7 @@ def hunger_check(pokeyman)
     end
 end
 
+# function for checking a pokeyman's hp and applicable changes if dead
 def hp_check(pokeyman, pokeydex)
     if pokeyman.health <= 0 
         puts "\nOh no #{pokeyman.name} has run out of health..."

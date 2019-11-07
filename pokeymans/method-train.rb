@@ -1,3 +1,4 @@
+# following choose option functions are used to handle user error inputs at decision points
 def choose1(option1)
     user_input = gets.chomp
     until (user_input == option1)
@@ -26,11 +27,11 @@ def choose3(option1, option2, option3)
     return user_input
 end
 
-
+# functino for checking exp and applicable level up
 def exp_check(pokeyman)
     system("clear")
     game_ui(pokeyman)
-    for key, value in pokeyman.lvl_caps
+    for key, value in pokeyman.lvl_caps                 # level caps is a hash stored in the pokeyman-class
         if pokeyman.exp >= key
             pokeyman.max_health += value[:hp_up]
             pokeyman.lvl += 1
@@ -44,19 +45,19 @@ def exp_check(pokeyman)
     end
 end
 
-
+# function for training pokeyman 
 def train(pokeyman, amount)
     system("clear")
     game_ui(pokeyman)
-    if pokeyman.happiness <= 0
+    if pokeyman.happiness <= 0              #if statement for checking if there is enough happiness to train 
         puts "Larry refuses to train... (Happiness at 0)"
         sleep 2
         return continue = true
     end
     
     pokeyman.exp += amount
-    pokeyman.happiness -= 5
-    if pokeyman.happiness < 0
+    pokeyman.happiness -= 5                 #applying decrease in happiness after training
+    if pokeyman.happiness < 0                     
         pokeyman.happines = 0
     end
     
@@ -70,5 +71,5 @@ def train(pokeyman, amount)
     puts "To Continue [c]"
     choose1("c")
     exp_check(pokeyman)
-    pokeyman.hunger += 4
+    pokeyman.hunger += 4                    # applying hunger decrease after training
 end
