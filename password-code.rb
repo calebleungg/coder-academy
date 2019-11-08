@@ -4,7 +4,7 @@ correct = 0
 
 while attempt_counter > 0 and correct == 0
     print "Enter Password: "
-    user_password = gets.chomp.to_s
+    user_password = gets.chomp
 
     if user_password == pre_def_password
         system("clear")

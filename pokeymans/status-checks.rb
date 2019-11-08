@@ -1,4 +1,3 @@
-
 # function for checking a pokeyman's hunger and applicable changes
 def hunger_check(pokeyman)
     if pokeyman.hunger > 30
