@@ -2,7 +2,8 @@ system("clear")
 
 #arrays for card data
 @numbers = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
-@suite = ["S", "H", "D", "C"]
+@suite = ["Spade", "H", "D", "C"]
+
 
 #used cards storing
 @used_cards = []
@@ -29,13 +30,22 @@ def deal_card
     else
     end
     @used_cards.push(card)
-    card
+    p card
 end
 
 def show_cards(x)
     print x 
     print " "
 end
+
+loop do
+    p @used_cards
+    deal_card
+    puts "again? "
+    gets
+end
+
+
 
 @comphand1 = deal_card
 @comphand2 = deal_card
