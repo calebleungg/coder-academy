@@ -7,4 +7,4 @@ until students.length == 0
     gets
 end
 
-# random pick of names while deleting from 
+# random pick of names while deleting from original array
