@@ -1,0 +1,182 @@
+body {
+  padding: 10px;
+  margin: 10px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "main-nav" "header" "content" "bio" "discography" "footer";
+}
+
+h2 {
+  text-align: center;
+  width: 90%;
+  background-color: #e619ca;
+}
+
+span {
+  color: #e619ca;
+}
+
+#main-nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: main-nav;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+}
+
+#main-nav nav a {
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+header {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: header;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#content {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#content img {
+  width: 320px;
+  height: 200px;
+}
+
+#bio {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: bio;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#bio li {
+  list-style: none;
+}
+
+#bio img {
+  width: 250px;
+  height: 200px;
+}
+
+#discography {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: discography;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: lightgrey;
+}
+
+@media screen and (min-width: 740px) {
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  p {
+    font-size: 1.25em;
+  }
+  li {
+    font-size: 1.25em;
+  }
+  #main-nav nav a {
+    font-size: 1.5em;
+    margin: 0 50px;
+  }
+  #content img {
+    width: 600px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+        grid-template-areas: "main-nav main-nav main-nav" "header header header" "content bio discography" "footer footer footer";
+  }
+  #content {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #content img {
+    width: 1000px;
+    height: 600px;
+  }
+  #main-nav {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  #main-nav nav a {
+    margin: 0px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
